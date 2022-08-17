@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./guess.css" />
+    <title>Guess MY number</title>
+  </head>
+  <body>
+    <header>
+      <h1>Guess My Number!</h1>
+      <p class="between">(between 1 and 20)</p>
+      <button class="btn again">Again!</button>
+      <div class="number">?</div>
+      <main>
+        <section class="left">
+          <input type="number" class="guess" />
+          <button class="btn check">check!</button>
+        </section>
+        <section class="right">
+          <p class="message">Star guessing...</p>
+          <p class="label-score">💯Score: <span class="score">0</span></p>
+          <p class="label-highscore">
+            🎖️Highscore: <span class="highscore">0</span>
+          </p>
+        </section>
+      </main>
+    </header>
+    <script src="./guess.js"></script>
+  </body>
+</html>
