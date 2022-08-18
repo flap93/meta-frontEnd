@@ -76,6 +76,7 @@ const theon = new Dog("theon", "belgian malinois");
 console.log(theon.getName());
 
 // !------------------------ Customer constructor --------------------------------
+
 // *herencia de prototipo le paseremos el metodo call con el prototipo de Dog
 // *lo llamaremos con el metodo this
 
@@ -86,7 +87,8 @@ function Customer(firstName, lastName, phone, membership) {
   this.membership = membership;
 }
 
-// Inherit the Person prototype methods
+// *Inherit the Person prototype methods
+
 Customer.prototype = Object.create(Dog.prototype);
 
 // Create customer
@@ -94,3 +96,34 @@ const customer1 = new Customer("Tom", "Smith", "555-555-5555", "Standard");
 
 console.log(customer1);
 console.log(customer1.getName());
+
+// !OBJECT CREATE ------------------------------
+// ! its an alternative way to create objects
+
+const personPrototypes = {
+  greeting: function () {
+    return `Hello there ${this.firstName} ${this.lastName}`;
+  },
+  getsMarried: function (newLastName) {
+    this.lastName = newLastName;
+  },
+};
+
+const mary = Object.create(personPrototypes);
+mary.firstName = "Mary";
+mary.lastName = "Williams";
+mary.age = 30;
+
+mary.getsMarried("Thompson");
+
+console.log(mary.greeting());
+
+const brad = Object.create(personPrototypes, {
+  firstName: { value: "Brad" },
+  lastName: { value: "Traversy" },
+  age: { value: 36 },
+});
+
+console.log(brad);
+
+console.log(brad.greeting());
