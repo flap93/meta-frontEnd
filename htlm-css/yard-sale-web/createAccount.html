@@ -122,8 +122,12 @@
       }
 
       @media (max-width: 640px) {
-        .logo {
-          display: block;
+        .form-container {
+          height: 100%;
+        }
+        .form {
+          height: 100%;
+          justify-content: space-between;
         }
       }
     </style>
@@ -132,9 +136,19 @@
     <div class="login">
       <div class="form-container">
         <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo" />
-
+        <h1 class="account">My account</h1>
         <form action="/">
-          <!-- ----Password---- -->
+          <!-------Name------->
+
+          <label for="name" class="label">Name</label>
+          <input
+            type="text"
+            id="Name"
+            placeholder="Pepito Grillo"
+            class="input input-name"
+          />
+
+          <!-- ----Email---- -->
 
           <label for="email" class="label">Email address</label>
           <input
@@ -143,7 +157,7 @@
             placeholder="testino@gmai.com"
             class="input input-email"
           />
-          <!-- ----RE enter password---- -->
+          <!-- ----Password---- -->
           <label for="password" class="label">Password</label>
           <input
             type="password"
@@ -151,12 +165,12 @@
             placeholder="*********"
             class="input input-password"
           />
-          <input type="submit" value="Login" class="primary-button login-btn" />
-
-          <a href="/">Forgot my password</a>
+          <input
+            type="submit"
+            value="Create"
+            class="primary-button login-btn"
+          />
         </form>
-
-        <button class="secondary-button signup-button">Sign up</button>
       </div>
     </div>
   </body>
