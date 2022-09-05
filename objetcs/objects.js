@@ -60,3 +60,9 @@ function testBracketsDynamicAccess() {
   console.log(drone[dynamicKey]);
 }
 testBracketsDynamicAccess();
+
+// DESTRUCTURING OBJECTS
+
+const { name, email, password } = employee;
+
+console.log(employee);
