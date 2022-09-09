@@ -26,7 +26,7 @@ function isLong(city) {
 // const longer = cities.filter(isLong);
 // console.log(longer); // [ "Liverpool", "Edinburgh" ]
 
-//!-----------------------------------------------------------------------
+//!-----------------------SPLIT METHOD------------------------------------------------
 
 //* Converting between strings and arrays
 // *Often you'll be presented with some raw data contained in a big long string, and you might want to separate the useful items out into a more useful form and then do things to them, like display them in a data table. To do this, we can use the split() method. In its simplest form, this takes a single parameter, the character you want to separate the string at, and returns the substrings between the separator as items in an array.
@@ -34,9 +34,13 @@ function isLong(city) {
 const data = "Manchester,London,Liverpool,Birmingham,Leeds,Carlisle";
 const cities = data.split(",");
 
-console.log(cities);
+const commaSeparated = cities.join(",");
 
-// !-----------------------------------------------------------------------
+console.log(cities);
+console.log(commaSeparated);
+console.log(cities[0]);
+
+// !--------------------SET METHOD---------------------------------------------------
 //  *How to remove duplicates from an array using the SET METHOD
 //  *the set method allows you to set a new object
 
@@ -44,11 +48,13 @@ const arr = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6];
 
 const set = new Set(arr);
 
+console.log(typeof set);
+
 const noDuplicates = [...set];
 
 console.log(noDuplicates);
 
-// !-----------------------------------------------------------------------
+// !---------------------FILTER METHOD--------------------------------------------------
 
 const users = [
   {
@@ -74,15 +80,124 @@ const users = [
 ];
 
 const result = users.filter((user) => user.sex === "male");
-const id = users.filter((user) => user.id === 1);
+
+// TO get id 1 & 2
+const id = users.filter((user) => user.id <= 2);
+// TO get id 1 ,2 and 3
+const id = users.filter((user) => user.id != 4);
 
 console.log(result);
 console.log(id);
 
-// !----
+// !-----------------------------SORT METHOD---------------
 
 let array = [5, 6, 10, 1, 2, 3, 4, 7, 8, 9];
 
 const result2 = array.sort((a, b) => a - b);
 
 console.log(result2);
+
+//  !-------------------------FOR OF -----------------------------------
+
+var dairy = [
+  "cheese",
+  "sour cream",
+  "milk",
+  "yogurt",
+  "ice cream",
+  "milkshake",
+];
+
+function logDairy() {
+  for (let dairys of dairy) {
+    console.log(dairys);
+  }
+}
+
+//-----------------------------------FOR LOOP
+
+const students = ["Maria", "John", "Albert", "Felix"];
+
+function greetStudents(student) {
+  console.log(`Hi, ${student}`);
+}
+
+for (let i = 0; i < students.length; i++) {
+  greetStudents(students[i]);
+}
+
+// ! ---------- FOR EACH------------------
+
+const fruits = ["Kiwi", "mango", "apple", "pear"];
+
+function appendIndex(fruit, index) {
+  console.log(`${index}. ${fruit}`);
+}
+
+fruits.forEach(appendIndex);
+
+const veggies = ["onion", "garlic", "potato"];
+veggies.forEach(function (veggie, index) {
+  console.log(`${index}. ${veggie}`);
+});
+
+// !---------------FILTER--------
+
+const nums = [0, 10, 20, 30, 40, 50];
+
+const greaterTWenty = nums.filter((num) => num > 20);
+
+console.log(greaterTWenty);
+
+// ! -----MAP---------
+
+const arrayFifty = [0, 10, 20, 30, 40, 50];
+
+const result50 = arrayFifty.map((num) => num / 10);
+
+console.log(result50);
+
+// !Spred  operator ---------------------
+
+let top3 = ["The Colosseum", "Trevi Fountain", "The Vatican City"];
+
+function showItenerary(place1, place2, place3) {
+  console.log("Visit " + place1);
+  console.log("Then Visit " + place2);
+  console.log("Finish with a visit to " + place3);
+}
+
+showItenerary(...top3);
+
+//!   wHILE
+
+const estudiantes = ["Jose", "Felix", "Theon", "Juan"];
+
+function saludarEstu(estudiante) {
+  console.log(`Hola, ${estudiante}`);
+}
+
+while (estudiantes.length > 0) {
+  const estudiante = estudiantes.shift();
+  saludarEstu(estudiante);
+}
+
+// ------------ REDUCE METHOD-----------
+
+const reduceArray = [5, 5, 5, 10, 2];
+
+console.log(reduceArray.reduce((pv, num) => pv + num, 0));
+
+// output :  27
+
+//////////////////////////////////////
+
+// SORT METHOD AND REDUCE METHOD
+
+const orderNumbers = [5, 10, 7, 3, 2, 1];
+
+const ordenar = orderNumbers.sort((a, b) => a - b);
+
+const multiplyAll = ordenar.reduce((pv, cv) => pv * cv, 1);
+
+console.log(multiplyAll);
