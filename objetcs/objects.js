@@ -246,3 +246,12 @@ function stantonMeasure(n, out) {
   const xLength = x.length;
   return xLength;
 }
+
+//  spread or rest operator
+
+const flying = { wings: 2 };
+const car = { wheels: 4 };
+
+const joinBoth = { ...flying, ...car };
+
+console.log(joinBoth);

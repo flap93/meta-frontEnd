@@ -190,9 +190,9 @@ console.log(reduceArray.reduce((pv, num) => pv + num, 0));
 
 // output :  27
 
-//////////////////////////////////////
+//////////////////////////////////////!
 
-// SORT METHOD AND REDUCE METHOD
+// *SORT METHOD AND REDUCE METHOD
 
 const orderNumbers = [5, 10, 7, 3, 2, 1];
 
@@ -201,3 +201,43 @@ const ordenar = orderNumbers.sort((a, b) => a - b);
 const multiplyAll = ordenar.reduce((pv, cv) => pv * cv, 1);
 
 console.log(multiplyAll);
+
+//?-----------------------------------------
+
+let i = 0;
+let result = input;
+while (i < fs.length) {
+  result = fs[i](result);
+  i++;
+}
+
+return result;
+
+//?------------------------
+
+return fs.reduce(function (pv, cv) {
+  return cv(pv);
+}, input);
+
+//? ------------------------------------
+return fs.reduce((pv, cv) => cv(pv), input);
+
+//!---------------------------------------------------------------------------------
+//!---------------------------------------------------------------------------------
+// !-----------mirar tb el spread or el rest operator en su folder --------
+//!---------------------------------------------------------------------------------
+//!---------------------------------------------------------------------------------
+
+//! -------- METHOD PUSH () PERO A TRAVES DEL SPREAD OPERATOR ----------
+let vegetables = ["onion", "parsley"];
+vegetables = [...veggies, "carrot", "beetroot"];
+
+console.log(vegetables);
+
+//  CONVERT A STRING USING THE SPREAD OPERATOR
+
+const greeting = "Hello";
+
+const arrayOfChars = [...greeting];
+
+console.log(arrayOfChars);
