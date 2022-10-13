@@ -255,3 +255,35 @@ const car = { wheels: 4 };
 const joinBoth = { ...flying, ...car };
 
 console.log(joinBoth);
+
+// access objects through bracket notation
+
+const restaurant = {
+  name: "Ichiran Ramen",
+  address: `${Math.floor(Math.random() * 100) + 1} Johnson Ave`,
+  city: "Brooklyn",
+  state: "NY",
+  zipcode: "11206",
+};
+
+let fullAddress =
+  restaurant["address"] +
+  ", " +
+  restaurant["city"] +
+  ", " +
+  restaurant["state"] +
+  " " +
+  restaurant["zipcode"];
+
+console.log(fullAddress);
+
+// modifying objects
+
+const midterms = { danielle: 96, thomas: 78 };
+
+// updating
+midterms.thomas = 85;
+// changing
+midterms["Antonio"] = 95;
+
+console.log(midterms);
